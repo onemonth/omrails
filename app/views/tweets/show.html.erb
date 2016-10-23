@@ -1,0 +1,16 @@
+<div class="container">
+    <p>
+      <strong>User:</strong>
+      <%= @tweet.user %>
+    </p>
+
+    <p>
+      <strong>Content:</strong>
+      <%= @tweet.content %>
+    </p>
+
+    <% if @tweet.user == current_user %>
+      <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
+    <% end %>
+    <%= link_to 'Back', tweets_path %>
+</div>

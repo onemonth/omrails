@@ -21,7 +21,7 @@
           <% if user_signed_in? %>
             <li class="nav-item pull-md-right"><%= link_to "Log out", signout_path, method: :delete, class: "nav-link" %></li>
           <% else %>
-            <li class="nav-item pull-md-right"><%= link_to "Sign up", signup_path, class: "nav-link btn btn-primary" %></li>
+            <li class="nav-item pull-md-right"><%= link_to "Sign up", signup_path, class: "btn btn-primary" %></li>
             <li class="nav-item pull-md-right"><%= link_to "Sign in", signin_path, class: "nav-link" %></li>
           <% end %>
         </ul>
