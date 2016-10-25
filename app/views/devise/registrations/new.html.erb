@@ -18,6 +18,16 @@
     <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control", placeholder: "Confirm Password" %>
   </div>
 
+  <div class="form-group">
+    <%= f.label :username %>
+    <%= f.text_field :username, autofocus: true, class: "form-control", placeholder: "Minimum 6 characters, all lowercase" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, autofocus: true, class: "form-control", placeholder: "John Smith" %>
+  </div>
+
   <%= f.submit "Sign up", class: "btn btn-primary" %>
 <% end %>
 
