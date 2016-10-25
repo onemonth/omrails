@@ -1,16 +1,14 @@
 <div class="container">
-    <p>
-      <strong>User:</strong>
-      <%= @tweet.user %>
-    </p>
-
-    <p>
-      <strong>Content:</strong>
-      <%= @tweet.content %>
-    </p>
-
-    <% if @tweet.user == current_user %>
-      <%= link_to 'Edit', edit_tweet_path(@tweet) %> |
-    <% end %>
-    <%= link_to 'Back', tweets_path %>
+  <div class="row">
+    <div class="offset-md-2 col-md-8">
+      <div class="card card-block">
+        <h4 class="card-title"><%= @tweet.user.email %></h4>
+        <p class="card-text"><%= @tweet.content %></p>
+        <% if @tweet.user == current_user %>
+          <%= link_to 'Edit', edit_tweet_path(@tweet), class: "card-link" %>
+        <% end %>
+        <%= link_to 'Back', tweets_path, class: "card-link" %>
+      </div>
+    </div>
+  </div>
 </div>
