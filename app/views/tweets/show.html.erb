@@ -2,7 +2,7 @@
   <div class="row">
     <div class="offset-md-2 col-md-8">
       <div class="card card-block">
-        <h4 class="card-title"><%= @tweet.user.username %></h4>
+        <h4 class="card-title"><%= link_to @tweet.user.username, user_path(@tweet.user.username) %></h4>
         <p class="card-text"><%= @tweet.content %></p>
         <% if @tweet.user == current_user %>
           <%= link_to 'Edit', edit_tweet_path(@tweet), class: "card-link" %>
