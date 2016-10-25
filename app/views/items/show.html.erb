@@ -1,0 +1,29 @@
+<div class="container">
+
+    <p>
+      <strong>User:</strong>
+      <%= @item.user.email %>
+    </p>
+
+    <p>
+      <strong>Title:</strong>
+      <%= @item.title %>
+    </p>
+
+    <p>
+      <strong>Url:</strong>
+      <%= @item.url %>
+    </p>
+
+    <% if @item.text? %>
+        <p>
+          <strong>Text:</strong>
+          <%= @item.text %>
+        </p>
+    <% end %>
+
+    <% if @item.user == current_user %>
+        <%= link_to 'Edit', edit_item_path(@item) %> |
+    <% end %>
+    <%= link_to 'Back', items_path %>
+</div>

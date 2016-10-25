@@ -1,0 +1,36 @@
+<div class="container">
+
+  <h1>Items</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Title</th>
+        <th>Url</th>
+        <th>Text</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @items.each do |item| %>
+        <tr>
+          <td><%= item.user.email %></td>
+          <td><%= item.title %></td>
+          <td><%= item.url %></td>
+          <td><%= item.text %></td>
+          <td><%= link_to 'Show', item %></td>
+          <% if item.user == current_user %>
+            <td><%= link_to 'Edit', edit_item_path(item) %></td>
+            <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'New Item', new_item_path %>
+</div>
