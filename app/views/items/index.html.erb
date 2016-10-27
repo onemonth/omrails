@@ -5,22 +5,31 @@
   <table>
     <thead>
       <tr>
+        <th>Votes</th>
         <th>User</th>
         <th>Title</th>
         <th>Url</th>
         <th>Text</th>
-        <th colspan="3"></th>
+        <th colspan="4"></th>
       </tr>
     </thead>
 
     <tbody>
       <% @items.each do |item| %>
         <tr>
+          <td><%= item.votes_for.up.size %></td>
           <td><%= item.user.username %></td>
           <td><%= item.title %></td>
           <td><%= item.url %></td>
           <td><%= item.text %></td>
           <td><%= link_to 'Show', item %></td>
+          <% if user_signed_in? %>
+            <% if current_user.voted_up_on? item %>
+              <td><%= link_to 'Unvote', unvote_item_path(item), method: :delete %></td>
+            <% else %>
+              <td><%= link_to 'Vote', vote_item_path(item), method: :post %></td>
+            <% end %>
+          <% end %>
           <% if item.user == current_user %>
             <td><%= link_to 'Edit', edit_item_path(item) %></td>
             <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>

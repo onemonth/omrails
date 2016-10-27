@@ -69,6 +69,7 @@ GEM
       i18n (~> 0.7)
       minitest (~> 5.1)
       tzinfo (~> 1.1)
+    acts_as_votable (0.10.0)
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (7.1.2)
@@ -230,6 +231,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin (~> 1.0.0.pre4)
   acts_as_follower!
+  acts_as_votable (~> 0.10.0)
   bootstrap (~> 4.0.0.alpha5)
   byebug
   coffee-rails (~> 4.2)
