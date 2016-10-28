@@ -1,4 +1,4 @@
-<%= form_for(tweet) do |f| %>
+<%= form_for(tweet, html: { multipart: true }) do |f| %>
   <% if tweet.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(tweet.errors.count, "error") %> prohibited this tweet from being saved:</h2>
@@ -14,6 +14,11 @@
   <div class="form-group">
     <%= f.label :content %>
     <%= f.text_area :content, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
 
   <%= f.submit class: "btn btn-primary" %>

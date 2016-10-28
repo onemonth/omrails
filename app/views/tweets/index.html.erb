@@ -18,6 +18,9 @@
         <% @tweets.each do |tweet| %>
           <%= link_to tweet, class: "list-group-item list-group-item-action" do %>
             <h5 class="list-group-item-heading"><%= tweet.user.username %></h5>
+            <% if tweet.image.present? %>
+              <center><%= image_tag tweet.image %></center>
+            <% end %>
             <p class="list-group-item-text"><%= tweet.content %></p>
           <% end %>
         <% end %>
